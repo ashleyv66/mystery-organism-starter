@@ -60,14 +60,33 @@ const pAequorFactory = (orgNo, dna) => {
     
   }
 }
-const ex1 = pAequorFactory(1,mockUpStrand());
-const ex2 = pAequorFactory(2,mockUpStrand());
+const instances = []
+for (let inst = 0; instances.length < 30; inst++) {
+  let strand = pAequorFactory(inst,mockUpStrand());
+  if (strand.willLikelySurvive()) {
+    console.log(strand.specimenNum)
+    console.log(strand.dna);
+    console.log(strand.willLikelySurvive())
+    instances.push(strand)
+  }
+}
+console.log(instances)
+//console.log(instances.length)
+//console.log(instances[1].dna)
+
+
+
+
+
+
+//const ex1 = pAequorFactory(1,mockUpStrand());
+//const ex2 = pAequorFactory(2,mockUpStrand());
 //console.log(ex1.specimenNum);
 //console.log(ex1.dna);
 //ex1.mutate();
-ex2.compareDNA(ex1);
-console.log(ex2.willLikelySurvive())
-console.log(ex2.dna);
+//ex2.compareDNA(ex1);
+//console.log(ex2.willLikelySurvive())
+//console.log(ex2.dna);
 
 
 
